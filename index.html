@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrenupAttorney.io — Find a Prenup Attorney in Your State</title>
+  <meta name="description" content="Understand prenuptial agreements clearly. Get matched with a qualified family law attorney in your state. PrenupAttorney makes prenups less complicated." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.prenupattorney.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="PrenupAttorney.io — Find a Prenup Attorney in Your State" />
+  <meta property="og:description" content="Prenups, explained clearly. Get matched with a qualified attorney in your state." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.prenupattorney.io/" />
+
+  <!-- Schema: LegalService + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "PrenupAttorney",
+    "description": "National prenuptial and postnuptial agreement attorney matching platform",
+    "url": "https://www.prenupattorney.io",
+    "serviceType": "Family Law Attorney Referral",
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a prenup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A prenuptial agreement (prenup) is a legal contract signed by two people before marriage. It defines how assets, debts, and financial matters will be handled during the marriage and in the event of divorce or death."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a prenup cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prenups typically cost between $1,500 and $10,000 depending on complexity and location. Simple agreements with few assets may cost less; complex estates can cost more."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a prenup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A prenup is worth considering if either partner owns a business, has significant assets or debts, has children from a prior relationship, or simply wants clear financial expectations from the start."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================
+       DESIGN SYSTEM
+       Primary: #0A0A0B (near black)
+       Accent: #C9A96E (warm gold — trust, premium)
+       Surface: #F7F5F1 (warm off-white)
+       Muted: #6B6860 (editorial grey)
+       Border: #E2DED7
+       ============================================ */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0A0A0B;
+      --gold: #C9A96E;
+      --gold-light: #E8D5A8;
+      --surface: #F7F5F1;
+      --white: #FEFEFE;
+      --muted: #6B6860;
+      --border: #E2DED7;
+      --text: #1A1917;
+
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'DM Sans', system-ui, sans-serif;
+      --font-mono: 'DM Mono', monospace;
+
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 24px;
+      --space-6: 32px;
+      --space-7: 48px;
+      --space-8: 64px;
+      --space-9: 96px;
+      --space-10: 128px;
+
+      --radius: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+
+      --max-w: 1200px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ---- UTILITY ---- */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--space-5); }
+    @media (max-width: 768px) { .container { padding: 0 var(--space-4); } }
+
+    .label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .gold-line {
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      vertical-align: middle;
+      margin-right: var(--space-3);
+    }
+
+    /* ---- NAV ---- */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(254, 254, 254, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s var(--ease);
+    }
+    nav.scrolled { border-bottom-color: var(--border); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--space-5);
+    }
+
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-7);
+      list-style: none;
+    }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--black); }
+
+    .nav-cta {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--white);
+      background: var(--black);
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: #2a2a2c; transform: translateY(-1px); }
+
+    /* ---- HERO ---- */
+    .hero {
+      padding-top: 120px;
+      padding-bottom: var(--space-10);
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -300px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(201, 169, 110, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: var(--space-10);
+      align-items: start;
+    }
+    @media (max-width: 960px) {
+      .hero-grid { grid-template-columns: 1fr; gap: var(--space-8); }
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-5);
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease) 0.1s forwards;
+    }
+
+    .hero-h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(44px, 6vw, 72px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      margin-bottom: var(--space-6);
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease) 0.2s forwards;
+    }
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: var(--space-7);
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease) 0.3s forwards;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: var(--space-7);
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease) 0.4s forwards;
+    }
+    @media (max-width: 480px) { .hero-stats { gap: var(--space-5); } }
+
+    .hero-stat-num {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--black);
+      letter-spacing: -0.02em;
+    }
+    .hero-stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ---- LEAD CARD ---- */
+    .lead-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-7);
+      box-shadow: 0 2px 32px rgba(10,10,11,0.06), 0 1px 4px rgba(10,10,11,0.04);
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease) 0.5s forwards;
+      position: sticky;
+      top: 80px;
+    }
+
+    .lead-card-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: var(--space-2);
+      color: var(--black);
+    }
+    .lead-card-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: var(--space-6);
+    }
+
+    .form-group {
+      margin-bottom: var(--space-4);
+    }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-2);
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,169,110,0.12);
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+    .btn-primary {
+      width: 100%;
+      padding: 15px;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: var(--space-3);
+    }
+    .btn-primary:hover { background: #2a2a2c; transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+
+    .form-trust {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-top: var(--space-4);
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .form-trust svg { flex-shrink: 0; }
+
+    /* ---- TRUST BAR ---- */
+    .trust-bar {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-5) 0;
+    }
+    .trust-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-8);
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .trust-item strong { color: var(--text); font-weight: 500; }
+
+    /* ---- SECTIONS ---- */
+    section { padding: var(--space-10) 0; }
+    @media (max-width: 768px) { section { padding: var(--space-9) 0; } }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      margin-bottom: var(--space-5);
+    }
+
+    .section-h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--black);
+      margin-bottom: var(--space-5);
+    }
+    .section-h2 em { font-style: italic; color: var(--gold); }
+
+    .section-intro {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    /* ---- EXPLAINER ---- */
+    .explainer { background: var(--white); }
+    .explainer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-10) var(--space-8);
+      margin-top: var(--space-9);
+    }
+    @media (max-width: 768px) { .explainer-grid { grid-template-columns: 1fr; gap: var(--space-7); } }
+
+    .explainer-item {}
+    .explainer-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: var(--space-4);
+      display: block;
+    }
+    .explainer-item h3 {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: var(--space-3);
+      color: var(--black);
+    }
+    .explainer-item p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ---- HOW IT WORKS ---- */
+    .how { background: var(--surface); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+      margin-top: var(--space-9);
+    }
+    @media (max-width: 768px) { .steps { grid-template-columns: 1fr; } }
+
+    .step {
+      padding: var(--space-7);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      position: relative;
+      transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+    }
+    .step:hover {
+      box-shadow: 0 8px 40px rgba(10,10,11,0.08);
+      transform: translateY(-2px);
+    }
+
+    .step-number {
+      font-family: var(--font-serif);
+      font-size: 48px;
+      font-weight: 400;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: var(--space-4);
+    }
+    .step h3 {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: var(--space-3);
+      color: var(--black);
+    }
+    .step p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    /* ---- FAQ ---- */
+    .faq { background: var(--white); }
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: var(--space-10);
+      align-items: start;
+    }
+    @media (max-width: 960px) { .faq-layout { grid-template-columns: 1fr; } }
+
+    .faq-sidebar { position: sticky; top: 100px; }
+
+    .faq-list { margin-top: var(--space-6); }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-5) 0;
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      gap: var(--space-4);
+    }
+    .faq-q h3 {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--black);
+      line-height: 1.4;
+    }
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, transform 0.3s;
+    }
+    .faq-item.open .faq-icon { border-color: var(--gold); transform: rotate(45deg); }
+
+    .faq-a {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.75;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s var(--ease), padding-top 0.4s;
+    }
+    .faq-item.open .faq-a { max-height: 400px; padding-top: var(--space-4); }
+
+    /* ---- PATHS / USE CASES ---- */
+    .paths { background: var(--black); }
+    .paths .section-h2 { color: var(--white); }
+    .paths .section-h2 em { color: var(--gold); }
+    .paths .section-intro { color: rgba(255,255,255,0.5); }
+    .paths .section-label .label { color: rgba(255,255,255,0.4); }
+
+    .path-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-9);
+    }
+    @media (max-width: 960px) { .path-cards { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .path-cards { grid-template-columns: 1fr; } }
+
+    .path-card {
+      padding: var(--space-6);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.03);
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .path-card:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(201,169,110,0.3);
+    }
+
+    .path-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(201,169,110,0.1);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-5);
+      font-size: 18px;
+    }
+    .path-card h3 {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: var(--space-3);
+      line-height: 1.3;
+    }
+    .path-card p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; }
+
+    .path-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: 13px;
+      color: var(--gold);
+      margin-top: var(--space-5);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .path-cta:hover { gap: var(--space-3); }
+
+    /* ---- COST SECTION ---- */
+    .cost { background: var(--surface); }
+
+    .cost-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: var(--space-7);
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 1px 12px rgba(10,10,11,0.06);
+    }
+    .cost-table th {
+      text-align: left;
+      padding: var(--space-4) var(--space-5);
+      font-size: 11px;
+      font-family: var(--font-mono);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .cost-table td {
+      padding: var(--space-5);
+      font-size: 14px;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+    .cost-table tr:last-child td { border-bottom: none; }
+    .cost-table tr:hover td { background: var(--surface); }
+
+    .cost-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+    .badge-green { background: #E8F5E9; color: #2E7D32; }
+    .badge-amber { background: #FFF8E1; color: #F57F17; }
+    .badge-blue  { background: #E3F2FD; color: #1565C0; }
+
+    /* ---- FINAL CTA ---- */
+    .final-cta {
+      background: var(--white);
+      text-align: center;
+    }
+    .final-cta-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .final-cta .section-h2 { text-align: center; }
+    .final-cta p {
+      font-size: 18px;
+      color: var(--muted);
+      font-weight: 300;
+      margin-bottom: var(--space-7);
+      line-height: 1.7;
+    }
+    .btn-gold {
+      display: inline-block;
+      padding: 16px 36px;
+      background: var(--gold);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 500;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.01em;
+    }
+    .btn-gold:hover { background: #b8935a; transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-block;
+      padding: 16px 36px;
+      background: transparent;
+      color: var(--black);
+      border: 1px solid var(--border);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 500;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.15s;
+      margin-left: var(--space-3);
+    }
+    .btn-outline:hover { border-color: var(--black); transform: translateY(-2px); }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: var(--black);
+      padding: var(--space-9) 0 var(--space-6);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr 1fr 1fr;
+      gap: var(--space-8);
+      margin-bottom: var(--space-8);
+    }
+    @media (max-width: 960px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+
+    .footer-logo {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--white);
+      font-weight: 500;
+      text-decoration: none;
+      display: block;
+      margin-bottom: var(--space-4);
+    }
+    .footer-logo span { color: var(--gold); }
+
+    .footer-tagline {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.7;
+    }
+
+    .footer-col h4 {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: var(--space-4);
+    }
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      margin-bottom: var(--space-3);
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--white); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: var(--space-6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.25); }
+    .footer-disclaimer {
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      max-width: 600px;
+      line-height: 1.6;
+      margin-top: var(--space-5);
+    }
+
+    /* ---- ANIMATIONS ---- */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ---- DECORATIVE DIVIDER ---- */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    /* ---- EDITORIAL PULL QUOTE ---- */
+    .pull-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(24px, 3vw, 36px);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--black);
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+      border-left: 2px solid var(--gold);
+      padding-left: var(--space-6);
+      margin: var(--space-9) 0;
+    }
+
+    /* ---- MOBILE NAV TOGGLE ---- */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: var(--space-2);
+    }
+    @media (max-width: 768px) { .mobile-menu-btn { display: flex; align-items: center; } }
+
+    .page-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gold);
+      text-decoration: none;
+      margin-top: var(--space-5);
+      transition: gap 0.2s;
+    }
+    .page-link:hover { gap: var(--space-3); }
+
+    /* State pills */
+    .state-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-6);
+    }
+    .state-pill {
+      padding: 6px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      font-size: 12px;
+      color: var(--muted);
+      font-family: var(--font-mono);
+    }
+
+    /* Notification banner */
+    .notice-bar {
+      background: var(--gold);
+      padding: 10px 0;
+      text-align: center;
+    }
+    .notice-bar p {
+      font-size: 13px;
+      color: var(--white);
+      font-weight: 500;
+    }
+    .notice-bar a { color: var(--white); text-decoration: underline; }
+
+    
+    /* ---- SITE IMAGES ---- */
+    .site-img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+    .site-img-wrap { overflow:hidden; border-radius:8px; line-height:0; }
+    .hero-image-wrap { margin-top:var(--space-8); width:100%; }
+    .hero-image-wrap .site-img-wrap { height:420px; }
+    @media(max-width:768px){.hero-image-wrap .site-img-wrap{height:260px;}}
+    .explainer-image .site-img-wrap { height:400px; }
+    .how-image .site-img-wrap { height:320px; }
+    .page-image .site-img-wrap { height:360px; }
+    .page-image-tall .site-img-wrap { height:420px; }
+    .portrait-image .site-img-wrap { height:380px; }
+    .portrait-image .site-img { object-position:top center; }
+    @media(max-width:768px){
+      .explainer-image .site-img-wrap{height:260px;}
+      .how-image .site-img-wrap{height:240px;}
+      .page-image .site-img-wrap{height:240px;}
+      .page-image-tall .site-img-wrap{height:280px;}
+    }
+/* Hero image */
+    .hero-image-wrap {
+      margin-top: var(--space-8);
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Prenup<span>Attorney</span></a>
+      <ul class="nav-links">
+        <li><a href="/prenup-attorney.html">Find an Attorney</a></li>
+        <li><a href="/postnuptial-agreement.html">Postnuptial</a></li>
+        <li><a href="/prenup-for-house.html">Property & Home</a></li>
+        <li><a href="/prenup-second-marriage.html">Second Marriage</a></li>
+      </ul>
+      <a href="#get-matched" class="nav-cta">Get Matched Free</a>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M3 5h14M3 10h14M3 15h14" stroke="#0A0A0B" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="hero-eyebrow">
+            <span class="gold-line"></span>
+            <span class="label">Prenuptial Agreement Platform — United States</span>
+          </div>
+          <h1 class="hero-h1">
+            Protect what<br/>matters, <em>clearly.</em>
+          </h1>
+          <p class="hero-sub">
+            A prenup isn't about distrust. It's about having an honest conversation before it's legally required. PrenupAttorney connects you with the right family law attorney — no cold calls, no confusion.
+          </p>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num">50</div>
+              <div class="hero-stat-label">States covered</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">48h</div>
+              <div class="hero-stat-label">Average match time</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">Free</div>
+              <div class="hero-stat-label">Matching service</div>
+            </div>
+          </div>
+
+        <!-- Hero image -->
+        <div class="hero-image-wrap reveal"><div class="site-img-wrap "><img src="images/couple-signing-documents.webp" alt="Couple reviewing their prenuptial agreement together at home" class="site-img" loading="lazy" decoding="async" width="1280" height="854"></div></div>
+        </div>
+        </div>
+
+        <!-- LEAD FORM -->
+        <div id="get-matched">
+          <div class="lead-card">
+            <div class="lead-card-title">Find your attorney</div>
+            <div class="lead-card-sub">Takes 90 seconds. No obligation.</div>
+
+            <form id="lead-form" onsubmit="handleSubmit(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fname">First Name</label>
+                  <input type="text" id="fname" name="fname" placeholder="Alex" required autocomplete="given-name" />
+                </div>
+                <div class="form-group">
+                  <label for="lname">Last Name</label>
+                  <input type="text" id="lname" name="lname" placeholder="Kim" required autocomplete="family-name" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="alex@email.com" required autocomplete="email" />
+              </div>
+
+              <div class="form-group">
+                <label for="state">Your State</label>
+                <select id="state" name="state" required>
+                  <option value="">Select your state…</option>
+                  <option>Alabama</option>
+                  <option>Alaska</option>
+                  <option>Arizona</option>
+                  <option>Arkansas</option>
+                  <option>California</option>
+                  <option>Colorado</option>
+                  <option>Connecticut</option>
+                  <option>Delaware</option>
+                  <option>Florida</option>
+                  <option>Georgia</option>
+                  <option>Hawaii</option>
+                  <option>Idaho</option>
+                  <option>Illinois</option>
+                  <option>Indiana</option>
+                  <option>Iowa</option>
+                  <option>Kansas</option>
+                  <option>Kentucky</option>
+                  <option>Louisiana</option>
+                  <option>Maine</option>
+                  <option>Maryland</option>
+                  <option>Massachusetts</option>
+                  <option>Michigan</option>
+                  <option>Minnesota</option>
+                  <option>Mississippi</option>
+                  <option>Missouri</option>
+                  <option>Montana</option>
+                  <option>Nebraska</option>
+                  <option>Nevada</option>
+                  <option>New Hampshire</option>
+                  <option>New Jersey</option>
+                  <option>New Mexico</option>
+                  <option>New York</option>
+                  <option>North Carolina</option>
+                  <option>North Dakota</option>
+                  <option>Ohio</option>
+                  <option>Oklahoma</option>
+                  <option>Oregon</option>
+                  <option>Pennsylvania</option>
+                  <option>Rhode Island</option>
+                  <option>South Carolina</option>
+                  <option>South Dakota</option>
+                  <option>Tennessee</option>
+                  <option>Texas</option>
+                  <option>Utah</option>
+                  <option>Vermont</option>
+                  <option>Virginia</option>
+                  <option>Washington</option>
+                  <option>West Virginia</option>
+                  <option>Wisconsin</option>
+                  <option>Wyoming</option>
+                  </select>
+              </div>
+
+              <div class="form-group">
+                <label for="situation">What best describes your situation?</label>
+                <select id="situation" name="situation" required>
+                  <option value="">Select one…</option>
+                  <option>Engaged and planning a prenup</option>
+                  <option>Married and want a postnuptial agreement</option>
+                  <option>Second marriage — protecting assets</option>
+                  <option>Have a home or property to protect</option>
+                  <option>Business owner getting married</option>
+                  <option>Just researching / not sure yet</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn-primary">
+                Connect Me With an Attorney →
+              </button>
+
+              <div class="form-trust">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M7 1L2 3.5v3.5C2 9.9 4.2 12.4 7 13c2.8-.6 5-3.1 5-6V3.5L7 1z" stroke="#6B6860" stroke-width="1.2" stroke-linejoin="round"/>
+                </svg>
+                <span>Free matching service. Your information is never sold. We match you with licensed attorneys only.</span>
+              </div>
+            </form>
+
+            <div id="form-success" style="display:none; text-align:center; padding: var(--space-7) 0;">
+              <div style="width:48px;height:48px;background:rgba(201,169,110,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4)"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l5 5 7-8" stroke="#C9A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="lead-card-title">You're matched.</div>
+              <p style="font-size:14px; color:var(--muted); margin-top: var(--space-3); line-height:1.6;">A qualified family law attorney in your state will reach out within 24–48 hours. Check your email for next steps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-bar-inner">
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L3 3.5v4C3 10.8 5.2 13.4 8 14c2.8-.6 5-3.2 5-6.5v-4L8 1z" stroke="#C9A96E" stroke-width="1.2"/></svg>
+          <span><strong>Licensed attorneys only</strong> — all 50 states</span>
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#C9A96E" stroke-width="1.2"/><path d="M5.5 8l2 2 3-3" stroke="#C9A96E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><strong>No cold calls</strong> — attorney contacts you</span>
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3" y="6" width="10" height="7" rx="1.5" stroke="#C9A96E" stroke-width="1.2"/><path d="M5.5 6V5a2.5 2.5 0 015 0v1" stroke="#C9A96E" stroke-width="1.2" stroke-linecap="round"/></svg>
+          <span><strong>Your data is private</strong> — never sold or shared</span>
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2l4 6-4 6" stroke="#C9A96E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><strong>Free service</strong> — attorneys pay us, not you</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT IS A PRENUP -->
+  <section class="explainer">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="gold-line"></span>
+        <span class="label">What is a Prenup?</span>
+      </div>
+      <h2 class="section-h2 reveal">Most people have it <em>backwards.</em></h2>
+      <p class="section-intro reveal">A prenuptial agreement isn't a sign of doubt — it's a sign of financial maturity. Here's what it actually does, and why more couples are choosing one.</p>
+
+      <blockquote class="pull-quote reveal">
+        "A prenup is the one legal document that protects both of you equally — not just one."
+      </blockquote>
+
+
+      
+      <!-- Explainer image -->
+      <div class="explainer-image reveal"><div class="site-img-wrap "><img src="images/attorney-consultation.webp" alt="Couple meeting with their prenuptial agreement attorney" class="site-img" loading="lazy" decoding="async" width="1280" height="854"></div></div>
+      <div class="explainer-grid">
+        <div class="explainer-item reveal">
+          <span class="explainer-num">01</span>
+          <h3>It defines what's yours, mine, and ours.</h3>
+          <p>A prenup establishes which assets and debts each person owns going into the marriage, and which are considered shared. This matters enormously when one partner has savings, property, a business, or debt the other doesn't share.</p>
+        </div>
+        <div class="explainer-item reveal">
+          <span class="explainer-num">02</span>
+          <h3>It protects both people — not just the wealthy one.</h3>
+          <p>Prenups aren't just for the rich. They can protect a partner who earns less, preserve inheritance rights, guarantee support obligations, and prevent one spouse from being burdened by the other's pre-existing debt.</p>
+        </div>
+        <div class="explainer-item reveal">
+          <span class="explainer-num">03</span>
+          <h3>It replaces your state's default rules with your own.</h3>
+          <p>Without a prenup, state law decides who gets what in a divorce. Those rules may not reflect your relationship. A prenuptial agreement lets you and your partner write the rules together, with full transparency.</p>
+        </div>
+        <div class="explainer-item reveal">
+          <span class="explainer-num">04</span>
+          <h3>It cannot cover everything — and that's okay.</h3>
+          <p>A valid prenup cannot determine child custody or support — courts decide those. It also cannot waive spousal support in a way that leaves someone on public assistance. Your attorney will tell you what's enforceable in your state.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: var(--space-8); display:flex; gap: var(--space-4); flex-wrap:wrap;">
+        <a href="/prenup-attorney.html" class="btn-gold">Find a Prenup Attorney</a>
+        <a href="/postnuptial-agreement.html" class="btn-outline">Already Married? See Postnups</a>
+      </div>
+
+      
+      <!-- Process image -->
+      <div class="how-image reveal"><div class="site-img-wrap "><img src="images/woman-completing-form.webp" alt="Woman completing her prenup attorney match form online" class="site-img" loading="lazy" decoding="async" width="1280" height="854"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="gold-line"></span>
+        <span class="label">How PrenupAttorney Works</span>
+      </div>
+      <h2 class="section-h2 reveal">Three steps from <em>confused</em><br/>to covered.</h2>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-number">01</div>
+          <h3>Tell us about your situation</h3>
+          <p>Answer a few simple questions about your state, timeline, and what you'd like to protect. No legal knowledge required — we're fluent in plain English.</p>
+        </div>
+        <div class="step reveal" style="transition-delay: 0.1s">
+          <div class="step-number">02</div>
+          <h3>We match you with a qualified attorney</h3>
+          <p>We route your request to a licensed family law attorney in your state who specializes in prenuptial agreements. Within 24–48 hours, they reach out to you.</p>
+        </div>
+        <div class="step reveal" style="transition-delay: 0.2s">
+          <div class="step-number">03</div>
+          <h3>You get a consultation, free of pressure</h3>
+          <p>Your first call is a conversation, not a sales pitch. Your attorney explains your options, answers your questions, and gives you an honest quote. No obligation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATHS -->
+  <section class="paths">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="gold-line"></span>
+        <span class="label" style="color:rgba(255,255,255,0.35)">Your Situation</span>
+      </div>
+      <h2 class="section-h2 reveal">Every couple is <em>different.</em><br/>We handle all of them.</h2>
+      <p class="section-intro reveal">Whether you're getting married for the first time or navigating a complex second marriage, PrenupAttorney has a path for you.</p>
+
+      <div class="path-cards">
+        <div class="path-card reveal">
+          <div class="path-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#C9A96E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="10" cy="10" r="7"/><path d="M10 3a3 3 0 0 1 3 3H7a3 3 0 0 1 3-3z"/>
+            </svg>
+          </div>
+          <h3>Engaged &amp; planning ahead</h3>
+          <p>You're happy in love and want to handle the paperwork before the big day. Smart thinking — prenups signed under pressure are more likely to be challenged.</p>
+          <a href="/prenup-attorney.html" class="path-cta">Find an attorney →</a>
+        </div>
+        <div class="path-card reveal" style="transition-delay:0.1s">
+          <div class="path-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#C9A96E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l7-6 7 6v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9z"/><path d="M7 18V11h6v7"/>
+            </svg>
+          </div>
+          <h3>Protecting your home or property</h3>
+          <p>You own a home, investment property, or real estate and want to ensure it's handled clearly if the marriage ends.</p>
+          <a href="/prenup-for-house.html" class="path-cta">Learn more →</a>
+        </div>
+        <div class="path-card reveal" style="transition-delay:0.2s">
+          <div class="path-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#C9A96E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="6" width="16" height="12" rx="1.5"/><path d="M14 6V5a4 4 0 0 0-8 0v1"/><path d="M10 11v3"/>
+            </svg>
+          </div>
+          <h3>Second marriage &amp; blended families</h3>
+          <p>You have children from a prior relationship, existing assets, or complex financial history. A prenup protects everyone — including your kids.</p>
+          <a href="/prenup-second-marriage.html" class="path-cta">See options →</a>
+        </div>
+        <div class="path-card reveal" style="transition-delay:0.3s">
+          <div class="path-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#C9A96E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2h8a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M8 6h4M8 10h4M8 14h2"/>
+            </svg>
+          </div>
+          <h3>Already married? Postnuptial.</h3>
+          <p>Missed the prenup window? A postnuptial agreement creates the same protections after the wedding. They're growing fast in popularity — and fully enforceable.</p>
+          <a href="/postnuptial-agreement.html" class="path-cta">Explore postnups →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COST TABLE -->
+  <section class="cost">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="gold-line"></span>
+        <span class="label">What Does a Prenup Cost?</span>
+      </div>
+      <h2 class="section-h2 reveal">Clear pricing.<br/><em>No surprises.</em></h2>
+      <p class="section-intro reveal">Attorney fees vary by complexity and state. Here's what you should realistically expect — so you can budget before your first call.</p>
+
+      <table class="cost-table reveal" aria-label="Prenuptial Agreement Cost Ranges">
+        <thead>
+          <tr>
+            <th>Situation</th>
+            <th>Typical Cost Range</th>
+            <th>Complexity</th>
+            <th>Avg. Timeline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Simple prenup</strong> — few assets, no property, no business</td>
+            <td>$1,500 – $3,500</td>
+            <td><span class="cost-badge badge-green">Low</span></td>
+            <td>2–4 weeks</td>
+          </tr>
+          <tr>
+            <td><strong>Moderate prenup</strong> — home, investments, or retirement accounts</td>
+            <td>$3,500 – $7,500</td>
+            <td><span class="cost-badge badge-amber">Medium</span></td>
+            <td>3–6 weeks</td>
+          </tr>
+          <tr>
+            <td><strong>Complex prenup</strong> — business, multiple properties, children involved</td>
+            <td>$7,500 – $15,000+</td>
+            <td><span class="cost-badge badge-blue">Complex</span></td>
+            <td>4–10 weeks</td>
+          </tr>
+          <tr>
+            <td><strong>Postnuptial agreement</strong> — after the wedding</td>
+            <td>$2,500 – $10,000</td>
+            <td><span class="cost-badge badge-amber">Varies</span></td>
+            <td>3–8 weeks</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="font-size:13px; color:var(--muted); margin-top:var(--space-4);">* Costs vary significantly by state and individual circumstances. These are national averages. Your attorney will provide a specific quote during consultation.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="faq-layout">
+        <div class="faq-sidebar">
+          <div class="section-label reveal">
+            <span class="gold-line"></span>
+            <span class="label">Common Questions</span>
+          </div>
+          <h2 class="section-h2 reveal">Every question you were afraid to Google.</h2>
+          <p class="section-intro reveal" style="font-size:16px;">We've answered thousands of questions about prenups. Here are the ones that matter most.</p>
+          <a href="#get-matched" class="page-link reveal" style="margin-top: var(--space-6);">
+            Still have questions? Talk to an attorney →
+          </a>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <h3>What is a prenuptial agreement, exactly?</h3>
+              <div class="faq-icon">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="#0A0A0B" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="faq-a">A prenuptial agreement — commonly called a prenup — is a legally binding contract entered into by two people before they marry. It sets out how assets, debts, and financial matters will be handled during the marriage and in the event of divorce, separation, or death. In most states, it must be in writing, signed by both parties, witnessed, and executed without duress well before the wedding date.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <h3>Do I really need a prenup if I don't have a lot of assets?</h3>
+              <div class="faq-icon">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="#0A0A0B" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="faq-a">Prenups aren't just for the wealthy. They're valuable if either partner carries significant student loans or other debt, if one partner earns considerably more, if either expects an inheritance, if one or both partners own a business, or simply if you want clear, documented expectations heading into the marriage. A prenup can also protect a lower-earning spouse by guaranteeing support obligations.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <h3>Can a prenup be challenged or thrown out?</h3>
+              <div class="faq-icon">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="#0A0A0B" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="faq-a">Yes — which is why how it's drafted matters enormously. Prenups can be challenged on the grounds of duress (signed too close to the wedding), lack of full financial disclosure, lack of independent legal counsel, unconscionability (wildly one-sided terms), or improper execution. The safest prenups are signed well in advance, with both parties represented by separate attorneys, and with complete financial disclosure from both sides.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <h3>How far in advance should we do a prenup?</h3>
+              <div class="faq-icon">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="#0A0A0B" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="faq-a">Most attorneys recommend starting the process at least 3–6 months before your wedding date. Signing a prenup within days or weeks of the ceremony dramatically increases the risk it will be challenged as signed under duress. Give yourselves adequate time for negotiation, independent review, and revision.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <h3>What can a prenup NOT cover?</h3>
+              <div class="faq-icon">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="#0A0A0B" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="faq-a">A prenup cannot predetermine child custody or child support — courts will always act in the best interest of the child at the time of divorce, regardless of what any agreement says. It also cannot waive spousal support in a manner that would leave one partner dependent on public assistance, include illegal provisions, or be used to encourage divorce. Anything related to personal lifestyle choices is generally also unenforceable.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <h3>What's the difference between a prenup and a postnup?</h3>
+              <div class="faq-icon">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="#0A0A0B" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="faq-a">A prenup is signed before marriage; a postnuptial agreement is signed after. Both serve similar purposes and both are legally enforceable in most states — though postnups face slightly higher scrutiny since the parties are already legally committed to each other. If you missed the prenup window, a postnup is a legitimate and increasingly common alternative.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <h3>Do both of us need separate attorneys?</h3>
+              <div class="faq-icon">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="#0A0A0B" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="faq-a">Not legally required in most states, but strongly recommended. If only one party had an attorney and the agreement later gets contested, the fact that the other party had no independent legal advice is a significant strike against its enforceability. Many attorneys now require that both parties at least be given the opportunity to retain separate counsel before signing.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <h3>How does PrenupAttorney make money if matching is free?</h3>
+              <div class="faq-icon">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="#0A0A0B" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="faq-a">PrenupAttorney charges attorneys a referral fee when a successful introduction is made. You pay nothing for our matching service. This is the same model used by platforms like Thumbtack and Bark — we earn when attorneys earn. Attorneys in our network are pre-vetted, licensed, and have agreed to our transparency and quality standards.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATE COVERAGE -->
+  <section style="padding: var(--space-8) 0; background: var(--surface);">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="gold-line"></span>
+        <span class="label">Coverage</span>
+      </div>
+      <h2 class="section-h2 reveal">Attorney network across <em>all 50 states.</em></h2>
+      <p class="section-intro reveal">Prenup law varies by state. We match you with an attorney who practices family law in your jurisdiction — not someone who handles everything.</p>
+      <div class="state-grid reveal">
+        <span class="state-pill">CA</span><span class="state-pill">TX</span><span class="state-pill">FL</span>
+        <span class="state-pill">NY</span><span class="state-pill">IL</span><span class="state-pill">PA</span>
+        <span class="state-pill">OH</span><span class="state-pill">GA</span><span class="state-pill">NC</span>
+        <span class="state-pill">MI</span><span class="state-pill">NJ</span><span class="state-pill">VA</span>
+        <span class="state-pill">WA</span><span class="state-pill">AZ</span><span class="state-pill">MA</span>
+        <span class="state-pill">TN</span><span class="state-pill">CO</span><span class="state-pill">MN</span>
+        <span class="state-pill">SC</span><span class="state-pill">AL</span><span class="state-pill">LA</span>
+        <span class="state-pill">KY</span><span class="state-pill">OR</span><span class="state-pill">OK</span>
+        <span class="state-pill">CT</span><span class="state-pill">UT</span><span class="state-pill">IA</span>
+        <span class="state-pill">NV</span><span class="state-pill">NM</span><span class="state-pill">KS</span>
+        <span class="state-pill">WI</span><span class="state-pill">MO</span><span class="state-pill">MD</span>
+        <span class="state-pill">+ 17 more</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="final-cta-inner">
+        <div class="section-label reveal" style="justify-content:center">
+          <span class="gold-line"></span>
+          <span class="label">Ready to Start?</span>
+        </div>
+        <h2 class="section-h2 reveal" style="text-align:center">
+          One conversation now.<br/><em>Clarity forever.</em>
+        </h2>
+        <p class="reveal">The best prenup is one signed with enough time, information, and mutual understanding. Start that conversation today — we'll handle the rest.</p>
+        <div class="reveal">
+          <a href="#get-matched" class="btn-gold">Get Matched With an Attorney — Free</a>
+          <a href="/postnuptial-agreement.html" class="btn-outline">Already Married?</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="footer-logo">Prenup<span>Attorney</span></a>
+          <p class="footer-tagline">The intelligent prenuptial agreement matching platform. Connecting couples with qualified family law attorneys across all 50 states.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Learn</h4>
+          <a href="/">What is a Prenup?</a>
+          <a href="/postnuptial-agreement.html">Postnuptial Agreements</a>
+          <a href="/prenup-for-house.html">Prenup for a House</a>
+          <a href="/prenup-second-marriage.html">Second Marriage Prenups</a>
+        </div>
+        <div class="footer-col">
+          <h4>Find an Attorney</h4>
+          <a href="/prenup-attorney.html">Prenup Attorneys</a>
+          <a href="/postnuptial-agreement.html">Postnup Attorneys</a>
+          <a href="#get-matched">Get Matched Free</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About PrenupAttorney</a>
+          <a href="#">For Attorneys</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 PrenupAttorney Inc. All rights reserved.</p>
+      </div>
+      <p class="footer-disclaimer">PrenupAttorney is not a law firm and does not provide legal advice. We connect individuals with licensed family law attorneys. All attorney relationships are between you and the attorney directly. Attorney availability varies by state.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    // FAQ toggle
+    function toggleFaq(el) {
+      const item = el.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    }
+
+    // Form submit
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('lead-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+      // TODO: POST to CRM / lead routing endpoint
+    }
+  </script>
+</body>
+</html>
