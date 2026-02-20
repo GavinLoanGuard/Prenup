@@ -230,10 +230,11 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: var(--space-10);
+      grid-template-columns: 1fr 400px;
+      gap: 56px;
       align-items: start;
     }
+    @media(max-width:1100px){.hero-grid{grid-template-columns:1fr;gap:40px;}}
     @media (max-width: 960px) {
       .hero-grid { grid-template-columns: 1fr; gap: var(--space-8); }
     }
@@ -395,8 +396,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: var(--space-8);
-      flex-wrap: wrap;
+      gap: clamp(16px, 3vw, 48px);
+      flex-wrap: nowrap;
+      padding: 0 var(--space-6);
     }
     .trust-item {
       display: flex;
@@ -404,6 +406,8 @@
       gap: var(--space-3);
       font-size: 13px;
       color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .trust-item strong { color: var(--text); font-weight: 500; }
 
@@ -1137,7 +1141,7 @@
 
       
       <!-- Process image -->
-      <div class="how-image reveal"><div class="site-img-wrap" style="height:340px;overflow:hidden;border-radius:8px;"><img src="images/woman-completing-form.webp" alt="Woman completing her prenup attorney match form online" class="site-img" loading="lazy" decoding="async" width="1280" height="854"></div>
+      <div class="how-image reveal" style="margin-top:32px;"><div class="site-img-wrap" style="height:340px;overflow:hidden;border-radius:8px;"><img src="images/woman-completing-form.webp" alt="Woman completing her prenup attorney match form online" class="site-img" loading="lazy" decoding="async" width="1280" height="854"></div>
     </div>
   </section>
 
