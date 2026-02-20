@@ -890,12 +890,7 @@
       .page-image .site-img-wrap{height:240px;}
       .page-image-tall .site-img-wrap{height:280px;}
     }
-/* Hero image */
-    .hero-image-wrap {
-      margin-top: var(--space-8);
-      width: 100%;
-    }
-  </style>
+    </style>
 </head>
 
 <body>
@@ -919,7 +914,7 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+    <!-- HERO -->
   <section class="hero">
     <div class="container">
       <div class="hero-grid">
@@ -948,13 +943,8 @@
               <div class="hero-stat-label">Matching service</div>
             </div>
           </div>
-
-        <!-- Hero image -->
-        <div class="hero-image-wrap reveal"><div class="site-img-wrap "><img src="images/couple-signing-documents.webp" alt="Couple reviewing their prenuptial agreement together at home" class="site-img" loading="lazy" decoding="async" width="1280" height="854"></div></div>
-        </div>
         </div>
 
-        <!-- LEAD FORM -->
         <div id="get-matched">
           <div class="lead-card">
             <div class="lead-card-title">Find your attorney</div>
@@ -1066,6 +1056,11 @@
             </div>
           </div>
         </div>
+      </div><!-- /hero-grid -->
+
+      <!-- Hero image — full width below grid -->
+      <div class="reveal" style="margin-top:48px;overflow:hidden;border-radius:12px;height:480px;">
+        <img src="images/couple-signing-documents.webp" alt="Couple reviewing their prenuptial agreement together at home" class="site-img" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" loading="lazy" decoding="async" width="1280" height="854">
       </div>
     </div>
   </section>
@@ -1111,7 +1106,7 @@
 
       
       <!-- Explainer image -->
-      <div class="explainer-image reveal"><div class="site-img-wrap "><img src="images/attorney-consultation.webp" alt="Couple meeting with their prenuptial agreement attorney" class="site-img" loading="lazy" decoding="async" width="1280" height="854"></div></div>
+      <div class="explainer-image reveal"><div class="site-img-wrap" style="height:440px;overflow:hidden;border-radius:8px;"><img src="images/attorney-consultation.webp" alt="Couple meeting with their prenuptial agreement attorney" class="site-img" loading="lazy" decoding="async" width="1280" height="854"></div></div>
       <div class="explainer-grid">
         <div class="explainer-item reveal">
           <span class="explainer-num">01</span>
@@ -1142,7 +1137,7 @@
 
       
       <!-- Process image -->
-      <div class="how-image reveal"><div class="site-img-wrap "><img src="images/woman-completing-form.webp" alt="Woman completing her prenup attorney match form online" class="site-img" loading="lazy" decoding="async" width="1280" height="854"></div>
+      <div class="how-image reveal"><div class="site-img-wrap" style="height:340px;overflow:hidden;border-radius:8px;"><img src="images/woman-completing-form.webp" alt="Woman completing her prenup attorney match form online" class="site-img" loading="lazy" decoding="async" width="1280" height="854"></div>
     </div>
   </section>
 
